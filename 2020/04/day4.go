@@ -12,10 +12,10 @@ import (
 )
 
 type Passport struct {
-	BirthYear      string `validate:"required"`
-	IssueYear      string `validate:"required"`
-	ExpirationYear string `validate:"required"`
-	Height         string `validate:"required"`
+	BirthYear      string `validate:"required,gte=1920,lte=2002"`
+	IssueYear      string `validate:"required,gte=2010,lte=2020""`
+	ExpirationYear string `validate:"required,gte=2020,lte=2030""`
+	Height         string `validate:"required,"`
 	HairColor      string `validate:"required"`
 	EyeColor       string `validate:"required"`
 	PassportID     string `validate:"required"`
